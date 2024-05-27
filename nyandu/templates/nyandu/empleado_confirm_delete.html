@@ -1,0 +1,13 @@
+{% extends "nyandu/base.html" %}
+
+{% block content %}
+{% load static %}
+<h1>Borrar Empleado</h1>
+
+<p>Estás seguro que querés borrar a: {{ empleado }}?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" action="" value="Si, borrar." />
+</form>
+{% endblock %}

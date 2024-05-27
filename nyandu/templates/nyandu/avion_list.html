@@ -1,0 +1,23 @@
+{% extends "nyandu/base.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'nyandu/style.css' %}">
+<div>
+    <h1>Reporte de Aviones</h1>
+    {% if avion_list %}
+    <ul>
+
+      {% for avion in avion_list %}
+      <li>
+        <a href="{{avion.id}}">{{ avion }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>No hay aviones registrados.</p>
+    {% endif %}
+
+</div>
+{% endblock %}

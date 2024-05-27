@@ -1,0 +1,13 @@
+{% extends "nyandu/base.html" %}
+
+{% block content %}
+{% load static %}
+<h1>Borrar Avión</h1>
+
+<p>Estás seguro que querés borrar a: {{ avion }}?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" action="" value="Si, borrar." />
+</form>
+{% endblock %}

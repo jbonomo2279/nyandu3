@@ -1,0 +1,23 @@
+{% extends "nyandu/base.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'nyandu/style.css' %}">
+<div>
+    <h1>Detalle del Empleado {{ empleado }}</h1>
+    <p><strong>Nombre completo:</strong> {{ empleado.nombre_completo }}</p>
+    <p><strong>Género:</strong> {{ empleado.genero }}</p>
+    <p><strong>Categoría:</strong> {{ empleado.categoria }}</p>
+    <p><strong>Correo electrónico:</strong> {{ empleado.email }}</p>
+    <p><strong>Teléfono:</strong> {{ empleado.telefono }}</p>
+    <p><strong>Dirección:</strong> {{ empleado.direccion }}</p>
+    <p><strong>Localidad:</strong> {{ empleado.localidad}}</p>
+    <p><strong>Provincia:</strong> {{ empleado.provincia}}</p>
+
+    <br>
+    <a href="{% url 'empleado-update' pk=empleado.pk %}">Editar Empleado</a>
+    <br>
+    <a href="{% url 'empleados' %}">Volver a Listado</a>
+
+</div>
+{% endblock %}

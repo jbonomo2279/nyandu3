@@ -1,0 +1,19 @@
+{% extends "nyandu/base.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'nyandu/style.css' %}">
+<div>
+    <h1>Detalle del Avión {{ avion }}</h1>
+    <p><strong>Matrícula:</strong> {{ avion.matricula }}</p>
+    <p><strong>Capacidad:</strong> {{ avion.capacidad }}</p>
+    <p><strong>Autonomía:</strong> {{ avion.autonomia }}</p>
+    <p><strong>Modelo:</strong> {{ avion.modelo }}</p>
+
+
+    <br>
+    <br>
+    <a href="{% url 'aviones' %}">Volver a Listado</a>
+
+</div>
+{% endblock %}

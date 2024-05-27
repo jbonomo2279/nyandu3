@@ -1,0 +1,20 @@
+{% extends "nyandu/base.html" %}
+
+{% block content %}
+
+    <h1>Listado de Empleados</h1>
+    {% if empleado_list %}
+    <ul>
+
+      {% for empleado in empleado_list %}
+      <li>
+        <a href="{{empleado.id}}">{{ empleado }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>No hay empleados registrados.</p>
+    {% endif %}
+
+{% endblock %}

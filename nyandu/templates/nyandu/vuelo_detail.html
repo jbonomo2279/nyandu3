@@ -1,0 +1,19 @@
+{% extends "nyandu/base.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'nyandu/style.css' %}">
+<div>
+    <h1>Detalle del Vuelo {{ vuelo }}</h1>
+    <p><strong>Origen:</strong> {{ vuelo.origen }}</p>
+    <p><strong>Destino:</strong> {{ vuelo.destino }}</p>
+    <p><strong>Fecha:</strong> {{ vuelo.fecha_vuelo }}</p>
+    <p><strong>Hora:</strong> {{ vuelo.hora_vuelo }}</p>
+    <p><strong>Avión que lo realiza:</strong> {{ vuelo.avion_vuelo }}</p>
+
+    <br>
+    <br>
+    <a href="{% url 'vuelos' %}">Volver a Listado</a>
+
+</div>
+{% endblock %}

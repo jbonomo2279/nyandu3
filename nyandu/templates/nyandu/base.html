@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'nyandu/style.css' %}">
+    <title>{% block title %}Nyandü{% endblock %}</title>
+    <link rel="icon" href="{% static  'nyandu/icon.png' %}">
+</head>
+
+<body>
+    <div id="sidebar">
+        <a href="{% url 'principal'%}"><img src="{% static 'nyandu/icon.png'%}" alt="logo-nyandu" style="height: 80px; margin-right: 10px;"></a>
+        <h2>Nyandü</h2>
+
+            <div id="us_side">
+                {% if user.is_authenticated %}
+                <ul>
+                    <li>Usuario: {{ user.get_username }}</li>
+                    <li><form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Cerrar Sesión</button></a></li>
+                {% else %}
+                    <li><a href="{% url 'login'%}?next={{request.path}}">Iniciar sesión</a></li>
+                {% endif %}
+                    <li><a href="mailto:2279@ifts24.edu.ar">¿Ayuda?</a></li>
+            </ul>
+        </div>
+
+    </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        {% block content %}{% endblock %}
+    <footer>
+        <p>&copy; BACode MMXXIV</p>
+    </footer>
+</body>
+</html>

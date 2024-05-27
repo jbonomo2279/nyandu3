@@ -1,0 +1,30 @@
+{% extends "nyandu/base.html" %}
+
+{% block content %}
+<div>
+    <br>
+    <h1>Menú</h1>
+    {% if user.is_authenticated %}
+        <div id="opciones">
+            <div id=op1 >
+                <h2 >Gestión de vuelos</h2>
+                <a href="{% url 'vuelos' %}">Ingresar al Listado</a>
+            </div>
+            <div id=op2 >
+                <h2>Gestión de Aviones</h2>
+                <a href="{% url 'aviones' %}">Ingresar al Listado</a>
+            </div>
+            <div id=op3>
+                 <h2>Gestión de Tripulación</h2>
+                 <a href="{% url 'empleados' %}">Ingresar al Listado</a>
+            </div>
+
+        </div>
+    {% else %}
+    <p>Debe Loguearse para poder usar las funciones.</p>
+    {% endif %}
+
+
+
+</div>
+{% endblock %}
